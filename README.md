@@ -44,12 +44,16 @@ The core thesis of the Algorithmist parent organization is founded on a compound
 ### Development Mode (Express + Vite)
 ```bash
 # Start backend server on port 3000 with Vite middleware
+cd frontend
 npm run dev
 ```
 
 ### Production Build & Launch
 ```bash
-# Build Vite client and compile server.ts with esbuild
+# Build the frontend and backend separately
+cd frontend
+npm run build
+cd ../backend
 npm run build
 
 # Start production server
@@ -60,9 +64,9 @@ npm run start
 
 ## ✍️ How to Add New Blog Posts
 
-All blog posts are typed and defined in `src/data/blogData.ts`. To add a new engineering dispatch or whitepaper:
+All blog posts are typed and defined in `frontend/src/data/blogData.ts`. To add a new engineering dispatch or whitepaper:
 
-1. Open `src/data/blogData.ts`.
+1. Open `frontend/src/data/blogData.ts`.
 2. Add a new object to the `BLOG_POSTS` array following the `BlogPost` interface:
 
 ```typescript
@@ -105,7 +109,7 @@ Content for the second section...
 
 ## 🎨 How to Adjust Colors & Theme Tokens
 
-The design system variables are defined in `src/index.css`:
+The design system variables are defined in `frontend/src/index.css`:
 
 ```css
 :root {
@@ -117,4 +121,4 @@ The design system variables are defined in `src/index.css`:
 }
 ```
 
-To tweak button styles or glass cards, adjust `src/components/common/Button.tsx` or `src/components/common/GlassCard.tsx`.
+To tweak button styles or glass cards, adjust `frontend/src/components/common/Button.tsx` or `frontend/src/components/common/GlassCard.tsx`.

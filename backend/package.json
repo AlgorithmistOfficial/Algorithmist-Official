@@ -1,0 +1,10 @@
+{
+  "name": "algorithmist-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "tsc --noEmit",
+    "start": "tsx server.ts"
+  }
+}
