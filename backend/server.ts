@@ -1,7 +1,9 @@
 import express from 'express';
-import path from 'path';
+import path from 'node:path';
 import { createServer as createViteServer } from 'vite';
-import { newsletterRouter } from './backend/newsletter.ts';
+import { newsletterRouter } from './newsletter.ts';
+
+const frontendRoot = path.resolve(process.cwd(), '../frontend');
 
 async function startServer() {
   const app = express();
@@ -49,12 +51,13 @@ async function startServer() {
   // Vite middleware for development vs static serve for production
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
+      root: frontendRoot,
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), 'dist');
+    const distPath = path.join(frontendRoot, 'dist');
     app.use(express.static(distPath));
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
