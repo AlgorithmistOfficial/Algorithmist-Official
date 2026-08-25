@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+    <rect width="500" height="500" fill="none"/>
+    <!-- Left navy leg of 'A' -->
+    <path d="M250 48 L76 405 L132 405 L250 148 L272 195 L296 148 Z" fill="#172940"/>
+    <!-- Main navy upper apex body and inner right facet -->
+    <path d="M250 48 L318 190 L272 195 L250 148 Z" fill="#172940"/>
+    <path d="M272 195 L318 190 L380 405 L328 405 Z" fill="#172940"/>
+    <!-- Right Orange Diagonal Accent -->
+    <path d="M318 190 L424 405 L380 405 L296 238 Z" fill="#E66A23"/>
+    <!-- Bottom Upward Arch Bridge -->
+    <path d="M84 405 C136 360 190 340 250 340 C310 340 364 360 416 405 C364 374 310 355 250 355 C190 355 136 374 84 405 Z" fill="#172940"/>
+    <!-- Center Arrowhead / Human Figure Motif -->
+    <path d="M250 250 L288 338 L268 338 L250 298 L232 338 L212 338 Z" fill="#172940"/>
+    <!-- Center Head Dot -->
+    <circle cx="250" cy="232" r="11" fill="#E66A23"/>
+  </svg>

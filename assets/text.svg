@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 156" width="700" height="156">
+    <defs>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Inter:wght@600;700&amp;display=swap');
+        .algo-wordmark {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-weight: 800;
+          font-size: 92px;
+          letter-spacing: -1px;
+        }
+        .algo-tagline {
+          font-family: 'Inter', system-ui, -apple-system, sans-serif;
+          font-size: 19px;
+          font-weight: 700;
+          letter-spacing: 5.6px;
+        }
+      </style>
+    </defs>
+    <!-- Main Brand Wordmark -->
+    <text x="0" y="88" class="algo-wordmark">
+      <tspan fill="#172940">A</tspan>
+      <tspan fill="#E66A23">L</tspan>
+      <tspan fill="#172940">gorithmist</tspan>
+    </text>
+    <!-- Signature Orange Dot over 'i' -->
+    <circle cx="564" cy="36" r="6.4" fill="#E66A23" />
+    <!-- Cropped Tagline Section -->
+    <g transform="translate(0, 112)">
+      <line x1="4" y1="24" x2="56" y2="24" stroke="#CBD5E1" stroke-width="2.4" />
+      <text x="72" y="30" fill="#344257" class="algo-tagline">
+        LOGIC <tspan fill="#E66A23">·</tspan> INNOVATION <tspan fill="#E66A23">·</tspan> IMPACT
+      </text>
+      <line x1="632" y1="24" x2="684" y2="24" stroke="#CBD5E1" stroke-width="2.4" />
+    </g>
+  </svg>

@@ -1,0 +1,6 @@
+{
+  "name": "Algorithmist",
+  "description": "Official parent organization portal for Algorithmist, connecting engineering education, Nexus project building, Academy DSA training, and enterprise technology services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
