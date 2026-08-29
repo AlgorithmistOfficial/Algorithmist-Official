@@ -1,13 +1,25 @@
 import express from 'express';
-import path from 'node:path';
-import { createServer as createViteServer } from 'vite';
 import { newsletterRouter } from './newsletter.ts';
-
-const frontendRoot = path.resolve(process.cwd(), '../frontend');
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 5000;
+
+  // Allow the separately deployed frontend to call this API.
+  const allowedOrigins = (process.env.FRONTEND_ORIGIN || 'http://localhost:5173')
+    .split(',')
+    .map((origin) => origin.trim());
+  app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (origin && allowedOrigins.includes(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+      res.setHeader('Vary', 'Origin');
+    }
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    if (req.method === 'OPTIONS') return res.sendStatus(204);
+    next();
+  });
 
   // Middleware for parsing JSON and form payloads
   app.use(express.json());
@@ -47,22 +59,6 @@ async function startServer() {
 
   // Mount modular backend newsletter router
   app.use('/api/newsletter', newsletterRouter);
-
-  // Vite middleware for development vs static serve for production
-  if (process.env.NODE_ENV !== 'production') {
-    const vite = await createViteServer({
-      root: frontendRoot,
-      server: { middlewareMode: true },
-      appType: 'spa',
-    });
-    app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(frontendRoot, 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
-  }
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Algorithmist Official Server listening on http://0.0.0.0:${PORT}`);

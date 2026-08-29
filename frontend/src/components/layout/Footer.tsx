@@ -5,6 +5,7 @@ import { useToast } from '../../context/ToastContext';
 import { Button } from '../common/Button';
 import { BrandIcon } from '../common/BrandIcon';
 import { BrandTextLogo } from '../common/BrandTextLogo';
+import { apiUrl } from '../../lib/api';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -30,7 +31,7 @@ export const Footer: React.FC = () => {
 
     try {
       // Send to Express backend
-      const res = await fetch('/api/newsletter', {
+      const res = await fetch(apiUrl('/newsletter'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email.trim() }),

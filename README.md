@@ -41,12 +41,21 @@ The core thesis of the Algorithmist parent organization is founded on a compound
 - Node.js (v18+)
 - npm
 
-### Development Mode (Express + Vite)
+### Development Mode (separate frontend and backend)
 ```bash
-# Start backend server on port 3000 with Vite middleware
+# Terminal 1: start the frontend on http://localhost:5173
 cd frontend
 npm run dev
+
+# Terminal 2: start the API on http://localhost:5000
+cd ../backend
+npm install
+npm run dev
 ```
+
+The Vite development server proxies `/api` requests to port 5000. For a separately
+deployed frontend, set `VITE_API_URL` to the public backend URL before building,
+for example `VITE_API_URL=https://api.example.com/api npm run build`.
 
 ### Production Build & Launch
 ```bash
@@ -56,9 +65,13 @@ npm run build
 cd ../backend
 npm run build
 
-# Start production server
+# Start the API server (the frontend is deployed by a static host)
 npm run start
 ```
+
+The backend listens on port 5000 by default and accepts `PORT` and
+`FRONTEND_ORIGIN` environment variables. `FRONTEND_ORIGIN` may be a comma-separated
+list of allowed frontend origins.
 
 ---
 

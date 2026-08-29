@@ -5,6 +5,7 @@ import { BrandIcon } from './BrandIcon';
 import { BrandTextLogo } from './BrandTextLogo';
 import { Button } from './Button';
 import { useToast } from '../../context/ToastContext';
+import { apiUrl } from '../../lib/api';
 
 export interface NewsletterSignupModalProps {
   /**
@@ -183,7 +184,7 @@ export const NewsletterSignupModal: React.FC<NewsletterSignupModalProps> = ({
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/newsletter', {
+      const response = await fetch(apiUrl('/newsletter'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

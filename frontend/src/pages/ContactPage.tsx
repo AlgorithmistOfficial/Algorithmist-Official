@@ -22,6 +22,7 @@ import { AuroraBackground } from '../components/common/AuroraBackground';
 import { MotionSection } from '../components/common/MotionSection';
 import { useToast } from '../context/ToastContext';
 import { ContactFormData, FormErrors } from '../types';
+import { apiUrl } from '../lib/api';
 
 export const ContactPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -109,7 +110,7 @@ export const ContactPage: React.FC = () => {
 
     try {
       // POST to Express endpoint
-      const response = await fetch('/api/contact', {
+      const response = await fetch(apiUrl('/contact'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
