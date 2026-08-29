@@ -40,10 +40,10 @@ const DynamicCapeWave: React.FC = () => (
     className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[68rem] overflow-hidden select-none"
   >
     <motion.div
-      initial={{ opacity: 0, x: '-48%', y: '-18%', rotate: -19, scale: 0.42 }}
+      initial={{ opacity: 0, x: '-34%', y: '-12%', rotate: -13, scale: 0.68 }}
       animate={{ opacity: 1, x: 0, y: 0, rotate: -7, scale: 1 }}
-      transition={{ duration: 1.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="absolute -left-[24%] top-[2rem] h-[50rem] w-[150%] origin-center sm:-left-[14%] sm:w-[132%]"
+      transition={{ duration: 2.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+      className="absolute -left-[24%] top-[2rem] h-[50rem] w-[150%] origin-center will-change-transform sm:-left-[14%] sm:w-[132%]"
     >
       <motion.svg
         viewBox="0 0 1600 900"
@@ -352,8 +352,9 @@ export const HomePage: React.FC = () => {
           {/* Header Strip for Metrics Section */}
           <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 mb-8 border-b border-white/10">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#D96725]/20 border border-[#D96725]/30 text-xs font-mono font-semibold text-[#F2A97E]">
-                <TrendingUp className="w-3.5 h-3.5" />
+              <div className="flex items-center gap-2 text-[11px] font-mono font-semibold uppercase tracking-[0.18em] text-[#F2A97E]">
+                <span className="h-px w-8 bg-[#D96725]" />
+                <TrendingUp className="w-3.5 h-3.5 shrink-0" />
                 <span>Verified System Metrics</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mt-2">
@@ -514,8 +515,8 @@ export const HomePage: React.FC = () => {
         <GlassCard variant="light" padding="xl" className="border-slate-200">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D96725]/10 text-xs font-semibold text-[#D96725]">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#172940]/5 text-xs font-semibold text-[#172940]">
+                <Sparkles className="w-3.5 h-3.5 text-[#D96725]" />
                 <span>The Dual Engine Pipeline</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#172940]">
@@ -527,8 +528,8 @@ export const HomePage: React.FC = () => {
               <div className="pt-2 flex flex-wrap gap-3">
                 <TagChip label="DSA Rigor" variant="accent" size="sm" />
                 <TagChip label="Build-to-Ship" variant="accent" size="sm" />
-                <TagChip label="Industry SDLC" variant="subtle" size="sm" />
-                <TagChip label="Direct Delivery" variant="subtle" size="sm" />
+                <TagChip label="Industry SDLC" variant="accent" size="sm" />
+                <TagChip label="Direct Delivery" variant="accent" size="sm" />
               </div>
             </div>
             <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-4">
@@ -562,26 +563,103 @@ export const HomePage: React.FC = () => {
         </GlassCard>
       </ScrollReveal>
 
-      {/* 5. Featured Blog Card */}
-      <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#172940]/5 text-xs font-semibold text-[#172940]">
+      {/* 5. Academy → Nexus → Industry Delivery */}
+      <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <GlassCard variant="light" padding="xl" className="border-slate-200">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-7 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#172940]/5 text-xs font-semibold text-[#172940]">
+                <GitBranch className="w-3.5 h-3.5 text-[#D96725]" />
+                <span>Learning to Industry Pipeline</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#172940]">
+                From Academic Foundations to Industry-Ready Delivery
+              </h3>
+              <p className="text-sm sm:text-base text-[#344257] leading-relaxed">
+                Academy builds the algorithms, fundamentals, and problem-solving discipline. Nexus turns that learning into reviewed, deployed products, while Optivio connects those capabilities to real business requirements and industry outcomes.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                <TagChip label="Academy Foundations" variant="accent" size="sm" />
+                <TagChip label="Nexus Build-to-Ship" variant="accent" size="sm" />
+                <TagChip label="Optivio Industry Fit" variant="accent" size="sm" />
+              </div>
+            </div>
+            <div className="lg:col-span-5 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+              <div className="rounded-2xl bg-[#172940] p-4 text-white shadow-md">
+                <div className="text-[11px] font-mono uppercase tracking-wider text-[#F2A97E]">01 · Learn</div>
+                <p className="mt-1 text-sm font-semibold">Academic rigor and technical confidence</p>
+              </div>
+              <div className="rounded-2xl bg-[#172940] p-4 text-white shadow-md">
+                <div className="text-[11px] font-mono uppercase tracking-wider text-[#F2A97E]">02 · Build</div>
+                <p className="mt-1 text-sm font-semibold">Nexus projects, reviews, and deployments</p>
+              </div>
+              <div className="rounded-2xl bg-[#172940] p-4 text-white shadow-md">
+                <div className="text-[11px] font-mono uppercase tracking-wider text-[#F2A97E]">03 · Deliver</div>
+                <p className="mt-1 text-sm font-semibold">Optivio-aligned business and industry outcomes</p>
+              </div>
+            </div>
+          </div>
+        </GlassCard>
+      </ScrollReveal>
+
+      {/* 6. Technologies + Optivio Solution Intelligence */}
+      <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <GlassCard variant="light" padding="xl" className="border-slate-200">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-5 order-2 lg:order-1 grid grid-cols-2 gap-4">
+              <div className="rounded-2xl border border-[#172940]/10 bg-[#172940]/5 p-4">
+                <ShieldCheck className="w-5 h-5 text-[#D96725]" />
+                <div className="mt-3 text-sm font-bold text-[#172940]">Technologies</div>
+                <p className="mt-1 text-xs leading-relaxed text-[#344257]">Builds and operates custom software, APIs, cloud systems, and delivery infrastructure.</p>
+              </div>
+              <div className="rounded-2xl border border-[#172940]/10 bg-[#172940]/5 p-4">
+                <Cpu className="w-5 h-5 text-[#D96725]" />
+                <div className="mt-3 text-sm font-bold text-[#172940]">Optivio</div>
+                <p className="mt-1 text-xs leading-relaxed text-[#344257]">Analyzes business needs, bottlenecks, and growth priorities to guide the right solution.</p>
+              </div>
+            </div>
+            <div className="lg:col-span-7 order-1 lg:order-2 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#172940]/5 text-xs font-semibold text-[#172940]">
+                <Layers className="w-3.5 h-3.5 text-[#D96725]" />
+                <span>Software Solutions + Business Insight</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#172940]">
+                Technologies and Optivio Solve the Full Business Problem
+              </h3>
+              <p className="text-sm sm:text-base text-[#344257] leading-relaxed">
+                Together, Technologies and Optivio cover more than self-hosted software development. Technologies delivers the engineering across product, platform, API, cloud, and integration layers; Optivio studies what businesses actually need so each solution improves operations, efficiency, and long-term growth.
+              </p>
+              <Link to="/services" className="inline-flex items-center gap-1 text-xs font-bold text-[#D96725] hover:text-[#c2571c]">
+                Discover enterprise services <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        </GlassCard>
+      </ScrollReveal>
+
+      {/* 7. Featured Blog Card */}
+      <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-8">
+          <div className="relative z-10 flex justify-center">
+            <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-[#172940]/5 text-xs font-semibold text-[#172940]">
               <BookOpen className="w-3.5 h-3.5 text-[#D96725]" />
               <span>Engineering Publication</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#172940]">
-              Latest from the Algorithmist Directorate
-            </h2>
           </div>
-          <Link to="/blogs">
-            <Button variant="outline" size="sm" icon={ArrowRight}>
-              View all blogs
-            </Button>
-          </Link>
-        </div>
+          <div className="relative z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="space-y-2 text-center">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#172940]">
+              Latest from the Algorithmist Directorate
+              </h2>
+            </div>
+            <Link to="/blogs">
+              <Button variant="outline" size="sm" icon={ArrowRight}>
+                View all blogs
+              </Button>
+            </Link>
+          </div>
 
-        <GlassCard variant="light" padding="lg" className="border-slate-200 hover:border-[#D96725]/40 transition-colors">
+        <GlassCard variant="light" padding="lg" className="relative z-10 border-slate-200 hover:border-[#D96725]/40 transition-colors">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <div className="flex items-center gap-3">
@@ -622,6 +700,7 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
         </GlassCard>
+        </div>
       </ScrollReveal>
 
       {/* 6. Ecosystem Partners & Tech Ecosystem Logo Strip */}

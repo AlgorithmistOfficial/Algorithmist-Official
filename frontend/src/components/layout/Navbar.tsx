@@ -78,14 +78,12 @@ export const Navbar: React.FC = () => {
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <BrandTextLogo showTagline={false} className="h-6 sm:h-7" />
-                <span className="text-[10px] font-mono tracking-wider font-semibold px-1.5 py-0.5 rounded bg-[#172940]/10 text-[#172940] uppercase">
-                  Parent
-                </span>
+                <BrandTextLogo
+                  showTagline={false}
+                  cropWhitespace
+                  className="h-4 w-[90px] transition-transform duration-200 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(217,103,37,0.35)] sm:h-5 sm:w-[140px]"
+                />
               </div>
-              <span className="text-[11px] text-[#344257] font-medium tracking-wide">
-                Engineering & Innovation
-              </span>
             </div>
           </Link>
 

@@ -5,17 +5,19 @@ interface BrandTextLogoProps {
   showTagline?: boolean;
   variant?: 'light' | 'dark' | 'auto';
   height?: number | string;
+  cropWhitespace?: boolean;
 }
 
 /**
  * Official Algorithmist Text Logo
- * Renders the official text.png asset (tightly cropped wordmark) with SVG vector fallback.
+ * Renders the requested TextLogo.png asset with a stable vector wordmark fallback.
  */
 export const BrandTextLogo: React.FC<BrandTextLogoProps> = ({
   className = 'h-7',
   showTagline = true,
   variant = 'auto',
-  height
+  height,
+  cropWhitespace = false
 }) => {
   const isDark = variant === 'dark';
 
@@ -25,13 +27,16 @@ export const BrandTextLogo: React.FC<BrandTextLogoProps> = ({
       style={height ? { height } : undefined}
     >
       <img
-        src="/text.png"
+        src="/TextLogo.png"
         alt="Algorithmist — Logic . Innovation . Impact"
-        className={`h-full w-auto max-h-full object-contain ${
+        className={`h-full ${cropWhitespace ? 'w-full object-cover' : 'w-auto object-contain'} max-h-full ${
           isDark ? 'brightness-0 invert drop-shadow-[0_0_1px_rgba(255,255,255,0.7)]' : ''
         }`}
         onError={(e) => {
-          (e.currentTarget as HTMLImageElement).src = '/text.svg';
+          const image = e.currentTarget as HTMLImageElement;
+          if (!image.src.endsWith('/text-logo.svg')) {
+            image.src = '/text-logo.svg';
+          }
         }}
       />
     </div>
