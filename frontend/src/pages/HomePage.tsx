@@ -394,8 +394,9 @@ export const HomePage: React.FC = () => {
       </ScrollReveal>
 
       {/* 3. “What We Do” Summary (3 Cards, Glass) */}
-      <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+      <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-10">
+          <div className="text-center max-w-3xl mx-auto space-y-3 relative z-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#172940]/5 text-xs font-semibold text-[#172940]">
             <Layers className="w-3.5 h-3.5 text-[#D96725]" />
             <span>Core Pillars</span>
@@ -406,14 +407,14 @@ export const HomePage: React.FC = () => {
           <p className="text-base text-[#344257]">
             Operating as an umbrella authority, we bridge the gap between academic theory, practical project execution, and enterprise software demands.
           </p>
-        </div>
+          </div>
 
-        <MotionStagger className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <MotionStagger className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-0">
           {/* Card 1: Education & Placement */}
           <MotionStaggerItem>
             <GlassCard variant="light" className="flex flex-col justify-between space-y-6 h-full">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#172940] text-[#F2A97E] flex items-center justify-center shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-[#172940] text-[#F2A97E] hover:bg-[#D96725] hover:text-white transition-colors duration-200 flex items-center justify-center shadow-md">
                   <GraduationCap className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#172940]">
@@ -443,9 +444,9 @@ export const HomePage: React.FC = () => {
 
           {/* Card 2: Hands-on Project Incubation */}
           <MotionStaggerItem>
-            <GlassCard variant="accent" className="flex flex-col justify-between space-y-6 h-full">
+            <GlassCard variant="light" className="flex flex-col justify-between space-y-6 h-full">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#D96725] text-white flex items-center justify-center shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-[#172940] text-[#F2A97E] hover:bg-[#D96725] hover:text-white transition-colors duration-200 flex items-center justify-center shadow-md">
                   <Code2 className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#172940]">
@@ -454,7 +455,7 @@ export const HomePage: React.FC = () => {
                 <p className="text-sm text-[#344257] leading-relaxed">
                   Through <span className="font-semibold text-[#172940]">Algorithmist Nexus</span>, students escape pure theoretical lectures by shipping real, full-scale cloud applications using industrial SDLC, PR reviews, and CI/CD pipelines.
                 </p>
-                <div className="space-y-2 pt-2 border-t border-[#D96725]/20">
+                <div className="space-y-2 pt-2 border-t border-slate-100">
                   <div className="flex items-center gap-2 text-xs text-[#172940] font-medium">
                     <CheckCircle2 className="w-4 h-4 text-[#D96725]" />
                     <span>Demonstrable production portfolios</span>
@@ -477,7 +478,7 @@ export const HomePage: React.FC = () => {
           <MotionStaggerItem>
             <GlassCard variant="light" className="flex flex-col justify-between space-y-6 h-full">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#344257] text-white flex items-center justify-center shadow-md">
+                <div className="w-12 h-12 rounded-2xl bg-[#172940] text-[#F2A97E] hover:bg-[#D96725] hover:text-white transition-colors duration-200 flex items-center justify-center shadow-md">
                   <Cpu className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-[#172940]">
@@ -504,7 +505,8 @@ export const HomePage: React.FC = () => {
               </Link>
             </GlassCard>
           </MotionStaggerItem>
-        </MotionStagger>
+          </MotionStagger>
+        </div>
       </ScrollReveal>
 
       {/* 4. Ecosystem Callout Spotlight: Nexus & Academy */}
