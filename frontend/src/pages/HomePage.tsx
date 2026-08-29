@@ -45,7 +45,7 @@ export const HomePage: React.FC = () => {
 
       {/* Dynamic SEO Meta for Home Route */}
       <SEO
-        title="Software Engineering & Talent Acceleration"
+        title="Home"
         description="Algorithmist is the parent technical authority bridging fundamental computational education, build-to-ship production engineering with Algorithmist Nexus, placement mastery with Algorithmist Academy, and enterprise technical consultancy."
         keywords={[
           'Algorithmist',
@@ -121,7 +121,7 @@ export const HomePage: React.FC = () => {
               transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-5"
             >
-              <GlassCard variant="dark" padding="none" className="border-white/15 shadow-2xl">
+              <GlassCard variant="dark" padding="none" className="hidden border-white/15 shadow-2xl">
                 {/* Code / Architecture Terminal Header */}
                 <div className="px-5 py-3.5 bg-black/30 border-b border-white/10 flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -238,6 +238,13 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
               </GlassCard>
+              <div className="overflow-hidden rounded-3xl border border-white/20 bg-[#172940] shadow-2xl">
+                <img
+                  src="/homepage.jpg"
+                  alt="Algorithmist team collaborating on software products and delivery systems"
+                  className="block aspect-[4/3] h-full w-full object-cover"
+                />
+              </div>
             </motion.div>
           </div>
         </div>

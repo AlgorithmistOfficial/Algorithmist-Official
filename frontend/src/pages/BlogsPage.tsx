@@ -56,7 +56,7 @@ export const BlogsPage: React.FC = () => {
 
       {/* Dynamic SEO Meta */}
       <SEO
-        title="Technical Blueprints, Architecture & Pedagogy Blogs"
+        title="Blogs"
         description="Explore deep-dive technical articles from the Algorithmist Parent Directorate on software architecture, DSA pedagogy, build-to-ship frameworks, and cloud systems."
         keywords={[
           'Algorithmist Blog',

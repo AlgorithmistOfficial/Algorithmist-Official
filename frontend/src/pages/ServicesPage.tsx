@@ -55,7 +55,7 @@ export const ServicesPage: React.FC = () => {
 
       {/* Dynamic SEO Meta */}
       <SEO
-        title="Engineering Services & Technical Advisory"
+        title="Services"
         description="Explore Algorithmist services spanning hands-on project incubation, university curriculum design, cloud DevOps optimization, and enterprise architecture audits."
         keywords={[
           'Algorithmist Services',

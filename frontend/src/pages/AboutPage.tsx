@@ -38,7 +38,7 @@ export const AboutPage: React.FC = () => {
 
       {/* Dynamic SEO Meta */}
       <SEO
-        title="About Algorithmist Parent Organization & Directorate"
+        title="About Us"
         description="Learn about the origin, core operating principles, leadership directorate, and educational mandate of Algorithmist."
         keywords={[
           'About Algorithmist',

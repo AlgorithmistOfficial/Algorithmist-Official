@@ -59,7 +59,7 @@ export const EcosystemPage: React.FC = () => {
 
       {/* Dynamic SEO Meta */}
       <SEO
-        title="Interconnected Ecosystem Map & Wings"
+        title="Ecosystem"
         description="Explore the Algorithmist system map connecting Algorithmist Academy, Algorithmist Nexus, Technologies, Optivio, CoreLabs, and Research."
         keywords={[
           'Algorithmist Ecosystem',

@@ -31,7 +31,7 @@ export const ImpactPage: React.FC = () => {
 
       {/* Dynamic SEO Metadata */}
       <SEO
-        title="Impact, Metrics & Evolutionary Timeline"
+        title="Impact"
         description="Discover how Algorithmist transforms engineering education into verifiable industry capability through Nexus project incubation and Academy DSA mastery."
         keywords={[
           'Algorithmist Impact',
