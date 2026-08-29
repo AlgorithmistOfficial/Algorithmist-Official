@@ -58,7 +58,7 @@ export const BlogDetailPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[0.125rem] sm:pt-[0.26rem] pb-10 sm:pb-16 space-y-12">
       {/* Route-Specific Aurora Background Variant */}
       <AuroraBackground variant="blog-detail" />
 

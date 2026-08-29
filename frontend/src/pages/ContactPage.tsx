@@ -158,7 +158,7 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[0.15rem] sm:pt-[0.26rem] pb-12 sm:pb-16 space-y-16">
       {/* Route-Specific Aurora Background Variant */}
       <AuroraBackground variant="contact" />
 

@@ -60,12 +60,14 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
+      {/* Reserve the navbar's space in document flow while the visual header stays fixed. */}
+      <div aria-hidden="true" className="h-16 sm:h-[72px]" />
       <header
         id="main-header"
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        className={`fixed top-0 left-0 z-40 w-full py-3 sm:py-4 transition-colors duration-300 ${
           isScrolled
-            ? 'bg-[#F7F7F7]/60 backdrop-blur-xl border-b border-[#344257]/10 shadow-[0_4px_24px_rgba(23,41,64,0.04)] py-3'
-            : 'bg-[#F7F7F7]/35 backdrop-blur-md border-b border-transparent py-4 sm:py-5'
+            ? 'bg-[#F7F7F7]/60 backdrop-blur-xl border-b border-[#344257]/10 shadow-[0_4px_24px_rgba(23,41,64,0.04)]'
+            : 'bg-[#F7F7F7]/35 backdrop-blur-md border-b border-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -428,7 +430,7 @@ export const Navbar: React.FC = () => {
                 transition: { duration: 0.2, ease: [0.32, 0.72, 0, 1] }
               }}
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-[65px] left-0 right-0 z-50 md:hidden max-h-[calc(100vh-80px)] overflow-y-auto px-4 pb-6"
+              className="fixed top-16 left-0 right-0 z-50 max-h-[calc(100vh-80px)] overflow-y-auto px-4 pb-6 sm:top-[72px] md:hidden"
             >
               <div className="rounded-3xl border border-white/80 bg-[#F7F7F7]/95 backdrop-blur-2xl p-4 sm:p-5 shadow-2xl space-y-4">
                 {/* Drawer Header Badge */}

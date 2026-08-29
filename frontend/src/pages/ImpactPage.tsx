@@ -25,7 +25,7 @@ export const ImpactPage: React.FC = () => {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState(CASE_STUDIES[0]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-24">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-12 sm:pb-16 space-y-24">
       {/* Route-Specific Aurora Background Variant */}
       <AuroraBackground variant="impact" />
 

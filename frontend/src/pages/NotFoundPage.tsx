@@ -19,7 +19,7 @@ export const NotFoundPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[75vh] flex items-center justify-center px-4 py-16 sm:py-24 relative overflow-hidden">
+    <div className="min-h-[75vh] flex items-center justify-center px-4 py-[0.21rem] sm:py-[0.31rem] relative overflow-hidden">
       {/* Route-Specific Aurora Background Variant */}
       <AuroraBackground variant="not-found" />
 

@@ -29,6 +29,93 @@ import { IMPACT_STATS } from '../data/impactData';
 import { BLOG_POSTS } from '../data/blogData';
 import { ECOSYSTEM_ENTITIES } from '../data/ecosystemData';
 
+/**
+ * A restrained, dimensional ribbon that travels through the page background.
+ * The broad translucent strokes create the cape-like volume while the narrow
+ * highlights sell the folded, 3D edge without competing with page content.
+ */
+const DynamicCapeWave: React.FC = () => (
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[68rem] overflow-hidden select-none"
+  >
+    <motion.div
+      initial={{ opacity: 0, x: '-48%', y: '-18%', rotate: -19, scale: 0.42 }}
+      animate={{ opacity: 1, x: 0, y: 0, rotate: -7, scale: 1 }}
+      transition={{ duration: 1.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+      className="absolute -left-[24%] top-[2rem] h-[50rem] w-[150%] origin-center sm:-left-[14%] sm:w-[132%]"
+    >
+      <motion.svg
+        viewBox="0 0 1600 900"
+        preserveAspectRatio="none"
+        className="h-full w-full"
+        animate={{ x: [0, 18, -8, 0], y: [0, -7, 8, 0], scaleY: [1, 1.015, 0.99, 1] }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <defs>
+          <linearGradient id="cape-volume" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="var(--navy)" stopOpacity="0.02" />
+            <stop offset="42%" stopColor="var(--primary)" stopOpacity="0.16" />
+            <stop offset="72%" stopColor="var(--navy)" stopOpacity="0.09" />
+            <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.14" />
+          </linearGradient>
+          <linearGradient id="cape-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.18" />
+            <stop offset="62%" stopColor="var(--accent-light)" stopOpacity="0.34" />
+            <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.13" />
+          </linearGradient>
+          <filter id="cape-soft-glow" x="-20%" y="-30%" width="140%" height="160%">
+            <feGaussianBlur stdDeviation="18" />
+          </filter>
+        </defs>
+
+        {/* Diffused shadow underneath the volume */}
+        <path
+          d="M-120 180 C210 80 430 315 690 390 C970 470 1180 225 1740 610"
+          fill="none"
+          stroke="var(--navy)"
+          strokeOpacity="0.08"
+          strokeWidth="310"
+          strokeLinecap="round"
+          filter="url(#cape-soft-glow)"
+        />
+        {/* Main dimensional body: left/rear to right/front */}
+        <path
+          d="M-120 135 C210 35 430 270 690 345 C970 425 1180 180 1740 565"
+          fill="none"
+          stroke="url(#cape-volume)"
+          strokeWidth="250"
+          strokeLinecap="round"
+        />
+        {/* Fold planes */}
+        <path
+          d="M-100 105 C215 10 435 245 690 320 C955 400 1195 155 1715 540"
+          fill="none"
+          stroke="var(--surface)"
+          strokeOpacity="0.18"
+          strokeWidth="4"
+        />
+        <path
+          d="M-80 188 C220 105 445 345 700 408 C975 478 1190 245 1720 625"
+          fill="none"
+          stroke="url(#cape-edge)"
+          strokeWidth="13"
+          strokeLinecap="round"
+        />
+        <path
+          d="M-70 235 C240 165 455 390 710 455 C990 525 1220 300 1715 670"
+          fill="none"
+          stroke="var(--accent-light)"
+          strokeOpacity="0.16"
+          strokeWidth="3"
+          strokeDasharray="2 20"
+          strokeLinecap="round"
+        />
+      </motion.svg>
+    </motion.div>
+  </div>
+);
+
 export const HomePage: React.FC = () => {
   const featuredBlog = BLOG_POSTS.find((b) => b.featured) || BLOG_POSTS[0];
   const nexusEntity = ECOSYSTEM_ENTITIES.find((e) => e.id === 'nexus');
@@ -36,9 +123,12 @@ export const HomePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'pipeline' | 'architecture'>('pipeline');
 
   return (
-    <div className="space-y-24 sm:space-y-32 pb-20">
+    <div className="relative isolate overflow-hidden pb-20">
       {/* Route-Specific Aurora Background Variant */}
       <AuroraBackground variant="home" />
+
+      {/* Dimensional diagonal cape wave, kept below all homepage content */}
+      <DynamicCapeWave />
 
       {/* Newsletter Signup Modal (Triggers after 15s of user inactivity on homepage) */}
       <NewsletterSignupModal inactivityTimeoutMs={15000} triggerOnInactivity={true} />
@@ -58,8 +148,10 @@ export const HomePage: React.FC = () => {
         ]}
       />
 
+      <div className="relative z-10 space-y-24 sm:space-y-32">
+
       {/* 1. Hero Section */}
-      <section className="relative pt-12 sm:pt-20 lg:pt-28">
+        <section className="relative pt-8 sm:pt-12 lg:pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Hero Text Content */}
@@ -80,7 +172,7 @@ export const HomePage: React.FC = () => {
 
               {/* Subheadline */}
               <p className="text-lg sm:text-xl text-[#344257] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
-                Algorithmist unifies deep algorithmic education, hands-on production project incubation with <span className="font-semibold text-[#172940]">Nexus</span>, structured placement preparation with <span className="font-semibold text-[#172940]">Academy</span>, and enterprise technical consultancy.
+                Algorithmist unifies deep algorithmic education, hands-on production project incubation, structured placement preparation with, and enterprise technical consultancy.
               </p>
 
               {/* Primary & Secondary Action CTAs */}
@@ -556,6 +648,7 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </ScrollReveal>
+      </div>
     </div>
   );
 };

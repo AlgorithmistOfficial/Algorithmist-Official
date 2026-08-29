@@ -8,7 +8,7 @@ interface BrandIconProps {
 
 /**
  * Official Algorithmist Icon Mark
- * Renders the official icon.png asset with graceful SVG fallback.
+ * Renders the official icon.png asset with a MainLogo fallback.
  */
 export const BrandIcon: React.FC<BrandIconProps> = ({
   className = 'w-10 h-10',
@@ -30,7 +30,7 @@ export const BrandIcon: React.FC<BrandIconProps> = ({
           isWhite ? 'brightness-0 invert' : isMono ? 'grayscale opacity-80' : ''
         }`}
         onError={(e) => {
-          (e.currentTarget as HTMLImageElement).src = '/icon.svg';
+          (e.currentTarget as HTMLImageElement).src = '/MainLogo.png';
         }}
       />
     </div>
