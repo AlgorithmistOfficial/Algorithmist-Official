@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from 'motion/react';
 import { ToastProvider } from './context/ToastContext';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
-import { AuroraBackground } from './components/common/AuroraBackground';
 import { HomePage } from './pages/HomePage';
 import { ImpactPage } from './pages/ImpactPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -78,9 +77,6 @@ export default function App() {
         <BrowserRouter>
           <ScrollToTop />
           <div className="flex flex-col min-h-screen relative selection:bg-[#F2A97E]/30 selection:text-[#172940]">
-            {/* Ambient Aurora Glow Background with Per-Route Dynamics */}
-            <AuroraBackground />
-
             {/* Sticky Navbar */}
             <Navbar />
 

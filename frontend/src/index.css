@@ -100,3 +100,25 @@
 .animate-pulse-glow {
   animation: pulseGlow 6s ease-in-out infinite;
 }
+
+/* Keep decorative effects from competing with scrolling on low-power devices. */
+@media (max-width: 640px), (prefers-reduced-motion: reduce) {
+  .glass-panel,
+  .glass-panel-dark,
+  .glass-panel-accent,
+  .glass-navbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* Also cover Tailwind's backdrop-blur utilities used by cards and overlays. */
+  [class*="backdrop-blur-"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .animate-float,
+  .animate-pulse-glow {
+    animation: none;
+  }
+}

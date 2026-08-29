@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import React from 'react';
+import { motion } from 'motion/react';
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -12,9 +12,8 @@ interface ScrollRevealProps {
 
 /**
  * ScrollReveal Component
- * Leverages Framer Motion's `useScroll`, `useTransform`, and `motion.div` to
- * produce subtle, high-fidelity fade-in and slide-up animations as sections
- * enter the viewport during scrolling.
+ * Uses a one-shot viewport observer so revealed sections do not stay subscribed
+ * to scroll progress after entering the viewport.
  */
 export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
@@ -23,21 +22,9 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   delay = 0,
   offsetY = 32,
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Track scroll progress of the container
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start 0.95', 'start 0.60'],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.2, 1]);
-  const y = useTransform(scrollYProgress, [0, 1], [offsetY, 0]);
-
   return (
-    <div ref={containerRef} id={id} className={`w-full ${className}`}>
+    <div id={id} className={`w-full ${className}`}>
       <motion.div
-        style={{ opacity, y }}
         initial={{ opacity: 0, y: offsetY }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
