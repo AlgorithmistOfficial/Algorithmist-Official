@@ -69,16 +69,10 @@ export const HomePage: React.FC = () => {
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-7 space-y-6 text-center lg:text-left"
             >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-[#344257]/15 shadow-xs text-xs font-semibold text-[#172940]">
-                <span className="flex h-2 w-2 rounded-full bg-[#D96725] animate-pulse" />
-                <span>The Parent Organization for Technical Excellence</span>
-              </div>
-
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#172940] leading-[1.12]">
                 Architecting the Future of{' '}
-                <span className="text-[#344257] underline decoration-[#D96725] decoration-4 underline-offset-8">
+                <span className="text-[#D96725]">
                   Software Engineering
                 </span>{' '}
                 and Talent Acceleration.

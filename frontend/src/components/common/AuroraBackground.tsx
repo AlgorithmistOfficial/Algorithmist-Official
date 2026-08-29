@@ -52,6 +52,16 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
       {/* Base Canvas Surface Tone */}
       <div className="absolute inset-0 bg-[#F7F7F7]" />
 
+      {/* Full-viewport grid layer, independent from the route animation. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage: 'radial-gradient(#172940 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+        }}
+      />
+
       {/* Dynamic Background Elements configured per variant */}
       <AnimatePresence mode="wait">
         {/* 1. HOME: Primary Navy & Warm Amber Nexus-Academy Apex */}
@@ -64,14 +74,6 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
             transition={{ duration: 0.8 }}
             className="absolute inset-0"
           >
-            {/* Fine Radial Grid */}
-            <div
-              className="absolute inset-0 opacity-[0.035]"
-              style={{
-                backgroundImage: `radial-gradient(#172940 1px, transparent 1px)`,
-                backgroundSize: '32px 32px',
-              }}
-            />
             {/* Primary Navy Nebula */}
             <motion.div
               animate={{

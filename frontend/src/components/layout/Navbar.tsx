@@ -64,8 +64,8 @@ export const Navbar: React.FC = () => {
         id="main-header"
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#F7F7F7]/85 backdrop-blur-xl border-b border-[#344257]/10 shadow-[0_4px_24px_rgba(23,41,64,0.04)] py-3'
-            : 'bg-[#F7F7F7]/60 backdrop-blur-md border-b border-transparent py-4 sm:py-5'
+            ? 'bg-[#F7F7F7]/60 backdrop-blur-xl border-b border-[#344257]/10 shadow-[0_4px_24px_rgba(23,41,64,0.04)] py-3'
+            : 'bg-[#F7F7F7]/35 backdrop-blur-md border-b border-transparent py-4 sm:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
