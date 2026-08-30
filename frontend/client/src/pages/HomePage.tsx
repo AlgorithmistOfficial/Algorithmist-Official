@@ -126,6 +126,16 @@ export const HomePage: React.FC = () => {
       {/* Dimensional diagonal cape wave, kept below all homepage content */}
       <DynamicCapeWave />
 
+      {/* Decorative hands artwork: a page-level background layer behind the final content */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-[6.5625vw] z-0 h-[65.625vw] bg-bottom bg-no-repeat opacity-90"
+        style={{
+          backgroundImage: "url('/Hands.png')",
+          backgroundSize: '100% 100%',
+        }}
+      />
+
       {/* Newsletter Signup Modal (Triggers after 15s of user inactivity on homepage) */}
       <NewsletterSignupModal inactivityTimeoutMs={15000} triggerOnInactivity={true} />
 
@@ -340,7 +350,7 @@ export const HomePage: React.FC = () => {
 
       {/* 2. "Proof / Metrics" Strip (4 Stat Counters with Staggered Viewport Entrance) */}
       <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-br from-[#172940] via-[#1e3450] to-[#344257] text-white p-6 sm:p-10 lg:p-12 shadow-2xl border border-white/10 relative overflow-hidden">
+        <div className="rounded-3xl bg-gradient-to-br from-[#172940]/90 via-[#1e3450]/85 to-[#344257]/90 backdrop-blur-xl text-white p-6 sm:p-10 lg:p-12 shadow-2xl border border-white/20 relative overflow-hidden">
           {/* Ambient Lighting Orbs */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#D96725]/20 via-[#F2A97E]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#172940]/40 rounded-full blur-2xl pointer-events-none" />
@@ -408,8 +418,14 @@ export const HomePage: React.FC = () => {
 
           <MotionStagger className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-0">
           {/* Card 1: Education & Placement */}
-          <MotionStaggerItem>
-            <GlassCard variant="light" className="flex flex-col justify-between space-y-6 h-full">
+          <MotionStaggerItem className="relative">
+            <img
+              src="/StandingGirl.png"
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-full left-[15%] z-0 h-[36rem] w-auto -translate-y-px -translate-x-1/2 object-contain object-bottom sm:h-[42rem]"
+            />
+            <GlassCard variant="light" className="relative z-10 flex flex-col justify-between space-y-6 h-full">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-[#172940] text-[#F2A97E] hover:bg-[#D96725] hover:text-white transition-colors duration-200 flex items-center justify-center shadow-md">
                   <GraduationCap className="w-6 h-6" />
