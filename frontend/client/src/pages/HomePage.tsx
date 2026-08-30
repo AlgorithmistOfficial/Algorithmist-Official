@@ -403,7 +403,7 @@ export const HomePage: React.FC = () => {
       {/* 3. “What We Do” Summary (3 Cards, Glass) */}
       <ScrollReveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-10">
-          <div className="text-center max-w-3xl mx-auto space-y-3 relative z-10">
+          <div className="text-center max-w-3xl mx-auto space-y-3 relative z-20">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#172940]/5 text-xs font-semibold text-[#172940]">
             <Layers className="w-3.5 h-3.5 text-[#D96725]" />
             <span>Core Pillars</span>
