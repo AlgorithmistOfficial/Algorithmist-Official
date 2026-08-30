@@ -121,32 +121,32 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link to="/" className="text-slate-300 hover:text-white transition-colors">
-                  Home Overview
+                  Home
                 </Link>
               </li>
               <li>
                 <Link to="/impact" className="text-slate-300 hover:text-white transition-colors">
-                  Impact & Timeline
+                  Impact
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-slate-300 hover:text-white transition-colors">
-                  Services & Advisory
+                  Services
                 </Link>
               </li>
               <li>
                 <Link to="/ecosystem" className="text-slate-300 hover:text-white transition-colors">
-                  Ecosystem Map
+                  Ecosystem
                 </Link>
               </li>
               <li>
                 <Link to="/blogs" className="text-slate-300 hover:text-white transition-colors">
-                  Engineering Blogs
+                  Blogs
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="text-slate-300 hover:text-white transition-colors">
-                  About & Leadership
+                  About
                 </Link>
               </li>
               <li>
