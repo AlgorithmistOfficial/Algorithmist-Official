@@ -110,7 +110,7 @@ export const BlogDetailPage: React.FC = () => {
 
         {/* Hero Image Placeholder with modern glass geometric styling */}
         <div className="w-full h-64 sm:h-80 rounded-3xl bg-gradient-to-br from-[#172940] via-[#344257] to-[#172940] relative overflow-hidden flex items-center justify-center text-white border border-white/20 shadow-xl">
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] [background-size:16px_16px]" />
           <div className="text-center p-6 space-y-2 relative z-10 max-w-md">
             <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-[#F2A97E] mx-auto">
               <BookOpen className="w-6 h-6" />

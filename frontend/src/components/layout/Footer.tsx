@@ -77,7 +77,6 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <BrandTextLogo variant="dark" showTagline={false} className="h-7" />
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-white/10 text-slate-300">Parent Authority</span>
               </div>
             </div>
             <p className="text-sm text-slate-300 leading-relaxed max-w-sm">
@@ -257,6 +256,9 @@ export const Footer: React.FC = () => {
             <span>&copy; {new Date().getFullYear()} Algorithmist. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-6">
+            <Link to="/contact" className="hover:text-white transition-colors">
+              Careers
+            </Link>
             <Link to="/about" className="hover:text-white transition-colors">
               Trust & Governance
             </Link>

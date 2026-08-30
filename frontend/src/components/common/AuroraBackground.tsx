@@ -33,16 +33,9 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
   // Determine active visual theme mode from props or route pathname
   const getThemeMode = (): AuroraVariant => {
     if (propVariant) return propVariant;
-    if (path === '/') return 'home';
-    if (path.startsWith('/impact')) return 'impact';
-    if (path.startsWith('/services')) return 'services';
-    if (path.startsWith('/ecosystem')) return 'ecosystem';
-    if (path.startsWith('/blogs/')) return 'blog-detail';
-    if (path.startsWith('/blogs')) return 'blogs';
-    if (path.startsWith('/about')) return 'about';
-    if (path.startsWith('/contact')) return 'contact';
-    if (path === '/404') return 'not-found';
-    return 'default';
+    // The homepage keeps its own visual treatment; all other routes share
+    // the Impact background for a consistent frontend experience.
+    return path === '/' ? 'home' : 'impact';
   };
 
   const activeVariant = getThemeMode();
@@ -57,7 +50,7 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
         aria-hidden="true"
         className="absolute inset-0 opacity-[0.035]"
         style={{
-          backgroundImage: 'radial-gradient(#172940 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(to right, #172940 1px, transparent 1px), linear-gradient(to bottom, #172940 1px, transparent 1px)',
           backgroundSize: '32px 32px',
         }}
       />
@@ -167,7 +160,7 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
             <div
               className="absolute inset-0 opacity-[0.035]"
               style={{
-                backgroundImage: `radial-gradient(circle at 1px 1px, #344257 1.2px, transparent 0)`,
+                backgroundImage: `linear-gradient(to right, #344257 1px, transparent 1px), linear-gradient(to bottom, #344257 1px, transparent 1px)`,
                 backgroundSize: '24px 24px',
               }}
             />
@@ -208,8 +201,8 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
             <div
               className="absolute inset-0 opacity-[0.03]"
               style={{
-                backgroundImage: `radial-gradient(#D96725 1.5px, transparent 1.5px), radial-gradient(#172940 1px, transparent 1px)`,
-                backgroundSize: '40px 40px, 20px 20px',
+                backgroundImage: `linear-gradient(to right, #D96725 1px, transparent 1px), linear-gradient(to bottom, #D96725 1px, transparent 1px)`,
+                backgroundSize: '40px 40px',
               }}
             />
             {/* Rotating Orbital Trajectory Ring */}
@@ -291,7 +284,7 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
             <div
               className="absolute inset-0 opacity-[0.025]"
               style={{
-                backgroundImage: `radial-gradient(#344257 0.8px, transparent 0.8px)`,
+                backgroundImage: `linear-gradient(to right, #344257 1px, transparent 1px), linear-gradient(to bottom, #344257 1px, transparent 1px)`,
                 backgroundSize: '28px 28px',
               }}
             />
@@ -323,7 +316,7 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
             <div
               className="absolute inset-0 opacity-[0.03]"
               style={{
-                backgroundImage: `radial-gradient(#172940 1.2px, transparent 1.2px)`,
+                backgroundImage: `linear-gradient(to right, #172940 1px, transparent 1px), linear-gradient(to bottom, #172940 1px, transparent 1px)`,
                 backgroundSize: '36px 36px',
               }}
             />
@@ -364,7 +357,7 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
             <div
               className="absolute inset-0 opacity-[0.035]"
               style={{
-                backgroundImage: `radial-gradient(#D96725 1.2px, transparent 1.2px)`,
+                backgroundImage: `linear-gradient(to right, #D96725 1px, transparent 1px), linear-gradient(to bottom, #D96725 1px, transparent 1px)`,
                 backgroundSize: '28px 28px',
               }}
             />
@@ -396,7 +389,7 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
             <div
               className="absolute inset-0 opacity-[0.03]"
               style={{
-                backgroundImage: `radial-gradient(#ef4444 1px, transparent 1px), radial-gradient(#172940 1px, transparent 1px)`,
+                backgroundImage: `linear-gradient(to right, #ef4444 1px, transparent 1px), linear-gradient(to bottom, #ef4444 1px, transparent 1px)`,
                 backgroundSize: '36px 36px',
               }}
             />
