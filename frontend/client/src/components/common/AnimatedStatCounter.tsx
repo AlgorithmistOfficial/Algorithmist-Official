@@ -80,12 +80,10 @@ export const AnimatedStatCounter: React.FC<AnimatedStatCounterProps> = ({ stat, 
       variants={{
         hidden: {
           opacity: 0,
-          y: 36,
           scale: 0.92,
         },
         visible: {
           opacity: 1,
-          y: 0,
           scale: 1,
           transition: {
             type: 'spring',
@@ -128,7 +126,7 @@ export const AnimatedStatCounter: React.FC<AnimatedStatCounterProps> = ({ stat, 
       </div>
 
       {/* Subtext Description */}
-      <div className="pt-3 mt-3 border-t border-white/10 relative z-10">
+      <div className="pt-3 mt-3 min-h-[4.5rem] border-t border-white/10 relative z-10">
         <p className="text-xs text-slate-300 font-light leading-relaxed">
           {stat.subtext}
         </p>
