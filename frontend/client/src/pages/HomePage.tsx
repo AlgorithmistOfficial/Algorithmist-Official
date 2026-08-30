@@ -399,7 +399,7 @@ export const HomePage: React.FC = () => {
             <span>Core Pillars</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#172940] tracking-tight">
-            How Algorithmist Powers the Engineering Continuum
+            How Algorithmist Powers the Engineering Continuum?
           </h2>
           <p className="text-base text-[#344257]">
             Operating as an umbrella authority, we bridge the gap between academic theory, practical project execution, and enterprise software demands.

@@ -300,9 +300,7 @@ export const NewsletterSignupModal: React.FC<NewsletterSignupModalProps> = ({
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                       <BrandTextLogo showTagline={false} className="h-5" />
-                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-[#D96725]/10 text-[#D96725]">
-                        Dispatches
-                      </span>
+                      
                     </div>
                     <span className="text-[11px] text-slate-500 font-mono">
                       Quarterly Engineering Intelligence
