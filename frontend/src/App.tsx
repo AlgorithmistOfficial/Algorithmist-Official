@@ -14,6 +14,7 @@ import { BlogDetailPage } from './pages/BlogDetailPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { AuroraBackground } from './components/common/AuroraBackground';
 
 // Scroll restoration component
 const ScrollToTop: React.FC = () => {
@@ -44,9 +45,11 @@ const AnimatedRoutes: React.FC = () => {
     <AnimatePresence mode="wait" initial={false}>
       <motion.div
         key={location.pathname}
-        initial={{ opacity: 0, y: 14 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
+        // Keep this wrapper free of transforms so viewport-fixed backgrounds
+        // remain fixed to the viewport instead of this route container.
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{
           duration: 0.28,
           ease: [0.25, 1, 0.5, 1],
@@ -76,7 +79,10 @@ export default function App() {
       <ToastProvider>
         <BrowserRouter>
           <ScrollToTop />
-          <div className="flex flex-col min-h-screen relative selection:bg-[#F2A97E]/30 selection:text-[#172940]">
+          <div className="flex flex-col min-h-[100dvh] relative selection:bg-[#F2A97E]/30 selection:text-[#172940]">
+            {/* Keep the viewport background outside route transitions and page clipping contexts. */}
+            <AuroraBackground />
+
             {/* Sticky Navbar */}
             <Navbar />
 

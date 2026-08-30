@@ -48,7 +48,7 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({
   const activeVariant = getThemeMode();
 
   return (
-    <div className={`fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none ${className}`}>
+    <div className={`fixed inset-x-0 -top-[25vh] -bottom-[25vh] pointer-events-none -z-10 overflow-hidden select-none ${className}`}>
       {/* Base Canvas Surface Tone */}
       <div className="absolute inset-0 bg-[#F7F7F7]" />
 

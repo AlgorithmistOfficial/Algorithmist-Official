@@ -17,7 +17,6 @@ import { GlassCard } from '../components/common/GlassCard';
 import { Button } from '../components/common/Button';
 import { TagChip } from '../components/common/TagChip';
 import { SEO } from '../components/common/SEO';
-import { AuroraBackground } from '../components/common/AuroraBackground';
 import { MotionSection, MotionStagger, MotionStaggerItem } from '../components/common/MotionSection';
 import { ScrollReveal } from '../components/common/ScrollReveal';
 import { SERVICES_LIST } from '../data/servicesData';
@@ -50,9 +49,6 @@ export const ServicesPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-12 sm:pb-16 space-y-16">
-      {/* Route-Specific Aurora Background Variant */}
-      <AuroraBackground variant="services" />
-
       {/* Dynamic SEO Meta */}
       <SEO
         title="Services"

@@ -22,7 +22,6 @@ import { TagChip } from '../components/common/TagChip';
 import { SEO } from '../components/common/SEO';
 import { MotionSection, MotionStagger, MotionStaggerItem } from '../components/common/MotionSection';
 import { ScrollReveal } from '../components/common/ScrollReveal';
-import { AuroraBackground } from '../components/common/AuroraBackground';
 import { NewsletterSignupModal } from '../components/common/NewsletterSignupModal';
 import { AnimatedStatCounter } from '../components/common/AnimatedStatCounter';
 import { IMPACT_STATS } from '../data/impactData';
@@ -124,9 +123,6 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="relative isolate overflow-hidden pb-20">
-      {/* Route-Specific Aurora Background Variant */}
-      <AuroraBackground variant="home" />
-
       {/* Dimensional diagonal cape wave, kept below all homepage content */}
       <DynamicCapeWave />
 

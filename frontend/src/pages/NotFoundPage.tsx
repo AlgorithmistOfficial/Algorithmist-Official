@@ -5,7 +5,6 @@ import { Search, Home, Mail, ArrowRight, Compass, ShieldAlert, Sparkles } from '
 import { GlassCard } from '../components/common/GlassCard';
 import { Button } from '../components/common/Button';
 import { BrandIcon } from '../components/common/BrandIcon';
-import { AuroraBackground } from '../components/common/AuroraBackground';
 
 export const NotFoundPage: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -20,9 +19,6 @@ export const NotFoundPage: React.FC = () => {
 
   return (
     <div className="min-h-[75vh] flex items-center justify-center px-4 py-[0.21rem] sm:py-[0.31rem] relative overflow-hidden">
-      {/* Route-Specific Aurora Background Variant */}
-      <AuroraBackground variant="not-found" />
-
       {/* Abstract geometric background shapes matching palette */}
       <div className="absolute -top-12 -left-12 w-64 h-64 bg-[#344257]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-12 -right-12 w-72 h-72 bg-[#D96725]/10 rounded-full blur-3xl pointer-events-none" />

@@ -17,7 +17,6 @@ import { GlassCard } from '../components/common/GlassCard';
 import { Button } from '../components/common/Button';
 import { TagChip } from '../components/common/TagChip';
 import { SEO } from '../components/common/SEO';
-import { AuroraBackground } from '../components/common/AuroraBackground';
 import { MotionSection, MotionStagger, MotionStaggerItem } from '../components/common/MotionSection';
 import { IMPACT_STATS, TIMELINE_ITEMS, CASE_STUDIES } from '../data/impactData';
 
@@ -26,9 +25,6 @@ export const ImpactPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-12 sm:pb-16 space-y-24">
-      {/* Route-Specific Aurora Background Variant */}
-      <AuroraBackground variant="impact" />
-
       {/* Dynamic SEO Metadata */}
       <SEO
         title="Impact"

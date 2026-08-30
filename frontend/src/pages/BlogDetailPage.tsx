@@ -17,7 +17,6 @@ import { GlassCard } from '../components/common/GlassCard';
 import { Button } from '../components/common/Button';
 import { TagChip } from '../components/common/TagChip';
 import { SEO } from '../components/common/SEO';
-import { AuroraBackground } from '../components/common/AuroraBackground';
 import { MotionSection } from '../components/common/MotionSection';
 import { BLOG_POSTS } from '../data/blogData';
 
@@ -35,7 +34,6 @@ export const BlogDetailPage: React.FC = () => {
   if (!post) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-20 text-center space-y-4">
-        <AuroraBackground variant="not-found" />
         <SEO title="Article Not Found" description="The requested technical article could not be found." />
         <h2 className="text-2xl font-bold text-[#172940]">Article Not Found</h2>
         <p className="text-sm text-[#344257]">The requested engineering dispatch could not be located.</p>
@@ -59,9 +57,6 @@ export const BlogDetailPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[0.125rem] sm:pt-[0.26rem] pb-10 sm:pb-16 space-y-12">
-      {/* Route-Specific Aurora Background Variant */}
-      <AuroraBackground variant="blog-detail" />
-
       {/* Dynamic SEO Meta for this exact blog post */}
       <SEO
         title={post.title}

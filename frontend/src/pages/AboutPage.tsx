@@ -16,7 +16,6 @@ import {
 import { GlassCard } from '../components/common/GlassCard';
 import { Button } from '../components/common/Button';
 import { SEO } from '../components/common/SEO';
-import { AuroraBackground } from '../components/common/AuroraBackground';
 import { MotionSection, MotionStagger, MotionStaggerItem } from '../components/common/MotionSection';
 import { FAQSection } from '../components/about/FAQSection';
 import { CORE_VALUES, TEAM_MEMBERS, TRUST_AND_COMPLIANCE } from '../data/teamData';
@@ -33,9 +32,6 @@ export const AboutPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-12 sm:pb-16 space-y-20">
-      {/* Route-Specific Aurora Background Variant */}
-      <AuroraBackground variant="about" />
-
       {/* Dynamic SEO Meta */}
       <SEO
         title="About Us"
